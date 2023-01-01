@@ -42,7 +42,7 @@ typedef unsigned short ush;
 typedef ush FAR ushf;
 typedef unsigned long  ulg;
 
-#if !defined(Z_U8) && !defined(Z_SOLO) && defined(STDC)
+#if !defined(Z_U8) && !defined(Z_SOLO) && defined(STDC) && !defined(__SASC)
 #  include <limits.h>
 #  if (ULONG_MAX == 0xffffffffffffffff)
 #    define Z_U8 unsigned long
