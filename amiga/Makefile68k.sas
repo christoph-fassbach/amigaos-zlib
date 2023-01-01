@@ -1,6 +1,6 @@
 # SMakefile for zlib
 # Modified from the standard UNIX Makefile Copyright Jean-loup Gailly
-# Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>
+# Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>, Christoph Fassbach <christoph.fassbach@udo.edu>
 # Amiga, SAS/C 6.56 & Smake
 
 CC=sc
