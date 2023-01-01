@@ -41,9 +41,9 @@ minigzip: minigzip.o z.lib
 mostlyclean: clean
 clean:
 	-delete force quiet example minigzip z.lib foo.gz SCOPTIONS
-	delete \#?.o \#?.lnk
+	delete \#?.o \#?.lnk || echo "Error ignored."
 
-SCOPTIONS: Makefile.sas
+SCOPTIONS: smakefile
 	copy to $@ <from <
 $(SCOPTIONS)
 <
