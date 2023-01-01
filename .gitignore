@@ -13,6 +13,11 @@
 *.gcno
 *.gcov
 
+# Amiga specifics
+*.lnk
+*.lib
+*.uaem
+
 /example
 /example64
 /examplesh
