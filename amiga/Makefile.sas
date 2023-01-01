@@ -11,7 +11,7 @@ LDFLAGS=LIB z.lib
 
 SCOPTIONS=OPTSCHED OPTINLINE OPTALIAS OPTTIME OPTINLOCAL STRMERGE \
        NOICONS PARMS=BOTH NOSTACKCHECK UTILLIB NOVERSION ERRORREXX \
-       DEF=POSTINC
+       DEF=POSTINC DEF=NO_vsnprintf DEF=NO_snprintf
 
 OBJS = adler32.o compress.o crc32.o gzclose.o gzlib.o gzread.o gzwrite.o \
        uncompr.o deflate.o trees.o zutil.o inflate.o infback.o inftrees.o inffast.o
