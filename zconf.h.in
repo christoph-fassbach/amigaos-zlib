@@ -390,6 +390,10 @@ typedef uLong FAR uLongf;
 #  define z_off_t long
 #endif
 
+#if defined(__SASC)
+#  define NO_vsnprintf
+#endif
+
 #if defined(__OS400__)
 #  define NO_vsnprintf
 #endif
