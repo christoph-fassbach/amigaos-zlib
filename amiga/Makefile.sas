@@ -40,7 +40,8 @@ minigzip: minigzip.o z.lib
 
 mostlyclean: clean
 clean:
-	-delete force quiet example minigzip *.o z.lib foo.gz *.lnk SCOPTIONS
+	-delete force quiet example minigzip z.lib foo.gz SCOPTIONS
+	delete \#?.o \#?.lnk
 
 SCOPTIONS: Makefile.sas
 	copy to $@ <from <
