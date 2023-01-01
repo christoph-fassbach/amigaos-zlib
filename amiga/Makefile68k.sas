@@ -43,6 +43,9 @@ clean:
 	-delete force quiet example minigzip z.lib foo.gz SCOPTIONS
 	delete \#?.o \#?.lnk || echo "Error ignored."
 
+distclean:
+	-delete force quiet SCOPTIONS example.c foo.gz minigzip.c smakefile
+
 SCOPTIONS: smakefile
 	copy to $@ <from <
 $(SCOPTIONS)
