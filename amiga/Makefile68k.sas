@@ -1,6 +1,6 @@
 # SMakefile for zlib
 # Modified from the standard UNIX Makefile Copyright Jean-loup Gailly
-# Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>
+# Osma Ahvenlampi <Osma.Ahvenlampi@hut.fi>, Christoph Fassbach <christoph.fassbach@udo.edu>
 # Amiga, SAS/C 6.56 & Smake
 
 CC=sc
@@ -11,7 +11,7 @@ LDFLAGS=LIB z.lib
 
 SCOPTIONS=OPTSCHED OPTINLINE OPTALIAS OPTTIME OPTINLOCAL STRMERGE \
        NOICONS PARMS=BOTH NOSTACKCHECK UTILLIB NOVERSION ERRORREXX \
-       DEF=POSTINC
+       DEF=POSTINC DEF=NO_vsnprintf DEF=NO_snprintf
 
 OBJS = adler32.o compress.o crc32.o gzclose.o gzlib.o gzread.o gzwrite.o \
        uncompr.o deflate.o trees.o zutil.o inflate.o infback.o inftrees.o inffast.o
@@ -40,9 +40,13 @@ minigzip: minigzip.o z.lib
 
 mostlyclean: clean
 clean:
-	-delete force quiet example minigzip *.o z.lib foo.gz *.lnk SCOPTIONS
+	-delete force quiet example minigzip z.lib foo.gz SCOPTIONS
+	delete \#?.o \#?.lnk || echo "Error ignored."
 
-SCOPTIONS: Makefile.sas
+distclean:
+	-delete force quiet SCOPTIONS example.c foo.gz minigzip.c smakefile
+
+SCOPTIONS: smakefile
 	copy to $@ <from <
 $(SCOPTIONS)
 <

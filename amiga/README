@@ -1,0 +1,12 @@
+AmigaOS 68k tested working with latest NDK 3.2.1 with libz v1.2.11.
+
+AmigaOS3 / 68k / SAS/C 6.58
+---------------------------
+Due to the absence of cmake and autoconf tools, there is only a static configuration script.
+From project root, run
+
+  execute amiga/configure68k.sas
+  smake clean all test
+
+Note:
+Makefile.pup stays largely untested for the time being.
